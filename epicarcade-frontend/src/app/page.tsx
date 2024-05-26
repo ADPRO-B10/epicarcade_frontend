@@ -19,7 +19,7 @@ export default function Home(){
         <Link href="/">
           <button className="button">Cart</button>
         </Link>
-        <Link href="/">
+        <Link href="/search-game">
           <button className="button">Search Game</button>
         </Link>
       </div>

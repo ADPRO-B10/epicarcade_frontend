@@ -1,0 +1,33 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.search-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 10px;
+  font-size: 1em;
+  width: 300px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
