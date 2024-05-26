@@ -22,7 +22,7 @@ body {
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px; /* Adjusted gap */
+  gap: 5px;
   width: 100%;
 }
 

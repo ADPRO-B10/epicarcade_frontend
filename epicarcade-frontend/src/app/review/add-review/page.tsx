@@ -12,7 +12,7 @@ export default function AddReview() {
   const router = useRouter();
 
   useEffect(() => {
-    fetch('http://localhost:8080/reviews/games')
+    fetch('http://34.34.219.228/reviews/games')
       .then(response => response.json())
       .then(data => {
         setGames(data);
@@ -32,7 +32,7 @@ export default function AddReview() {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/reviews/add-review', {
+      const response = await fetch('http://34.34.219.228/reviews/add-review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
