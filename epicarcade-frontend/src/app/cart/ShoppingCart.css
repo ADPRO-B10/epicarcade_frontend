@@ -1,5 +1,16 @@
+.shopping-cart-container {
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
 .shopping-cart {
   display: flex;
+  align-items: flex-start;
 }
 
 .cart-items {
@@ -8,12 +19,16 @@
 }
 
 .cart-item {
-  border: 1px solid #ccc;
+  background-color: #fff; /* White background color for each item card */
+  border: 2px solid #ccc;
   padding: 10px;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  width: 200px;
+  margin-bottom: 10px; 
 }
+
 
 .item-details {
   flex: 1;
@@ -37,7 +52,7 @@
 .checkout-btn {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #4caf50; /* Green background color for the button */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -46,5 +61,5 @@
 }
 
 .checkout-btn:hover {
-  background-color: #0056b3;
+  background-color: #45a049; /* Darker green on hover */
 }

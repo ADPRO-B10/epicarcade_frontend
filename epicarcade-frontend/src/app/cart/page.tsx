@@ -9,6 +9,8 @@ const ShoppingCart: React.FC = () => {
     { id: 1, name: 'Product 1', price: 10 },
     { id: 2, name: 'Product 2', price: 20 },
     { id: 3, name: 'Product 3', price: 30 },
+    { id: 4, name: 'Product 4', price: 10 },
+    { id: 5, name: 'Product 5', price: 10 },
   ];
 
   // Calculate total price
@@ -31,11 +33,12 @@ const ShoppingCart: React.FC = () => {
 
   return (
     <div className="shopping-cart">
+      <h1 className="page-title">Shopping Cart</h1>
       <div className="cart-items">
         {cartItems.map((item) => (
           <div key={item.id} className="cart-item">
             <div className="item-details">
-              <p>{item.name}</p>
+              <h3>{item.name}</h3>
               <p>${item.price}</p>
             </div>
           </div>
