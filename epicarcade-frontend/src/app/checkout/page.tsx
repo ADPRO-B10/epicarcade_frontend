@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './checkout.css';
@@ -41,14 +43,8 @@ export default function Checkout() {
             fetch(`/payments/${data.id}/process`, {
               method: 'POST',
             })
-            .then(response => response.json()) // Convert the response to JSON
+            .then(response => response.json())
             .then(paymentStatus => {
-              // Now you can use paymentStatus
-              if (paymentStatus === 'Success') {
-                // Handle success case
-              } else if (paymentStatus === 'Rejected') {
-                // Handle rejection case
-              }
             });
           });
       });
