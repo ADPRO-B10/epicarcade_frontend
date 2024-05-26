@@ -27,7 +27,7 @@ export default function BuyerRegisterForm() {
     //ini buat nanti masukin ke database
 
     try {
-      const response = await fetch('http://localhost:8080/register', {
+      const response = await fetch('http://34.34.219.228/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

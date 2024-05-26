@@ -8,11 +8,11 @@ export default function AllReviews() {
   const [games, setGames] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:8080/reviews/list-reviews')
+    fetch('http://34.34.219.228/reviews/list-reviews')
       .then(response => response.json())
       .then(data => {
         setReviews(data);
-        fetch('http://localhost:8080/reviews/games')
+        fetch('http://34.34.219.228/reviews/games')
           .then(response => response.json())
           .then(gamesData => {
             const gamesDict = {};
@@ -32,7 +32,7 @@ export default function AllReviews() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/reviews/delete-review/${id}`, {
+      const response = await fetch(`http://34.34.219.228/reviews/delete-review/${id}`, {
         method: 'DELETE',
       });
 
