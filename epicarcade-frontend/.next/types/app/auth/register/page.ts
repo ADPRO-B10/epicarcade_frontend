@@ -1,4 +1,4 @@
-// File: /Users/tsabitcodar/Documents/TKADPRO/epicarcade_frontend/epicarcade-frontend/src/app/auth/register/page.tsx
+// File: C:\Users\Ato\OneDrive\Documents\Kuliah Tugas\Semester 4\AdPro\EpicArcade\epicarcade_frontend\epicarcade-frontend\src\app\auth\register\page.tsx
 import * as entry from '../../../../../src/app/auth/register/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
