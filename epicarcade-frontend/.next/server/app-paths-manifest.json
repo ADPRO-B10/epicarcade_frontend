@@ -1,7 +1,5 @@
 {
-  "/auth/page": "app/auth/page.js",
-  "/auth/register/page": "app/auth/register/page.js",
-  "/auth/register/buyer/page": "app/auth/register/buyer/page.js",
-  "/auth/register/seller/page": "app/auth/register/seller/page.js",
-  "/auth/login/page": "app/auth/login/page.js"
+  "/auth/login/page": "app/auth/login/page.js",
+  "/review/page": "app/review/page.js",
+  "/review/all-review/page": "app/review/all-review/page.js"
 }

@@ -1,24 +1,27 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 import './LoginForm.css';
 
 export default function LoginForm() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const user = {
-      username,
+      email,
       password,
     };
 
     try {
-      const response = await fetch('http://localhost:8080/login', {
+      const response = await fetch('http://34.128.91.126/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,6 +37,12 @@ export default function LoginForm() {
       console.log('Success:', data);
       setSuccessMessage('Login successful!');
       setErrorMessage('');
+
+      // Set cookies
+      Cookies.set('user', JSON.stringify(data), { expires: 1 });
+      console.log('Cookie set:', Cookies.get('user'));
+
+      router.push('/review');
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('Login failed. Please try again.');
@@ -46,11 +55,11 @@ export default function LoginForm() {
         <h1>Login</h1>
         <form onSubmit={handleSubmit} className="form">
           <label>
-            Username:
+            Email:
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="input"
             />

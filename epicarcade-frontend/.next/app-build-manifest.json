@@ -1,45 +1,27 @@
 {
   "pages": {
-    "/page": [
+    "/auth/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/css/app/auth/login/page.css",
+      "static/chunks/app/auth/login/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/auth/page": [
+    "/review/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/auth/page.css",
-      "static/chunks/app/auth/page.js"
+      "static/css/app/review/page.css",
+      "static/chunks/app/review/page.js"
     ],
-    "/auth/register/page": [
+    "/review/all-review/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/auth/register/page.css",
-      "static/chunks/app/auth/register/page.js"
-    ],
-    "/auth/register/buyer/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/auth/register/buyer/page.css",
-      "static/chunks/app/auth/register/buyer/page.js"
-    ],
-    "/auth/register/seller/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/auth/register/seller/page.css",
-      "static/chunks/app/auth/register/seller/page.js"
-    ],
-    "/auth/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/auth/login/page.css",
-      "static/chunks/app/auth/login/page.js"
+      "static/css/app/review/all-review/page.css",
+      "static/chunks/app/review/all-review/page.js"
     ]
   }
 }

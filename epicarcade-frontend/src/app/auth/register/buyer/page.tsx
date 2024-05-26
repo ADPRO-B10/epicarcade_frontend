@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import './BuyerForm.css';
 import { useRouter } from 'next/navigation';
+import './BuyerForm.css';
 
 export default function BuyerRegisterForm() {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVerify, setPasswordVerify] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const router = useRouter();
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,12 +22,13 @@ export default function BuyerRegisterForm() {
 
     const user = {
       username,
+      email,
       password,
+      role: "2"
     };
-    //ini buat nanti masukin ke database
 
     try {
-      const response = await fetch('http://localhost:8080/register', {
+      const response = await fetch('http://34.128.91.126/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ export default function BuyerRegisterForm() {
       console.log('Success:', data);
       setSuccessMessage('Registration successful!');
       setErrorMessage('');
-      router.push('/review');
+      router.push('/auth/login');
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('Registration failed. Please try again.');
@@ -61,6 +62,16 @@ export default function BuyerRegisterForm() {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
+              className="input"
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="input"
             />

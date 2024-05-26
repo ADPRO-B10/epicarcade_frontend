@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import './SellerForm.css';
 import { useRouter } from 'next/navigation';
+import './SellerForm.css';
 
 export default function SellerRegisterForm() {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVerify, setPasswordVerify] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const router = useRouter();
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,12 +22,13 @@ export default function SellerRegisterForm() {
 
     const user = {
       username,
+      email,
       password,
+      role: "3",
     };
-    //ini buat nanti masukin ke database
 
     try {
-      const response = await fetch('http://localhost:8080/register', {
+      const response = await fetch('http://34.128.91.126/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ export default function SellerRegisterForm() {
       console.log('Success:', data);
       setSuccessMessage('Registration successful!');
       setErrorMessage('');
-      router.push('/review');
+      router.push('/login'); // Redirect to /login page
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('Registration failed. Please try again.');
@@ -53,7 +54,7 @@ export default function SellerRegisterForm() {
   return (
     <div className="background">
       <div className="container">
-        <h1>Register as Seller</h1>
+        <h1>Register as Buyer</h1>
         <form onSubmit={handleSubmit} className="form">
           <label>
             Username:
@@ -61,6 +62,16 @@ export default function SellerRegisterForm() {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
+              className="input"
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="input"
             />
