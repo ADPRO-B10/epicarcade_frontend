@@ -16,11 +16,11 @@ export default function AllReviews() {
       setUserRole(user.role);
     }
 
-    fetch('http://localhost:8080/reviews/list-reviews')
+    fetch('http://34.34.219.228/reviews/list-reviews')
       .then(response => response.json())
       .then(data => {
         setReviews(data);
-        fetch('http://localhost:8080/reviews/games')
+        fetch('http://34.34.219.228/reviews/games')
           .then(response => response.json())
           .then(gamesData => {
             const gamesDict = {};

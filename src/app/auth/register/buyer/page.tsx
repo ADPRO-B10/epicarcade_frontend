@@ -40,11 +40,11 @@ export default function BuyerRegisterForm() {
         throw new Error('HTTP error ' + response.status);
       }
 
-      const data = await response.json(); // Read and parse the response as JSON
+      const data = await response.json();
       console.log('Success:', data);
       setSuccessMessage('Registration successful!');
       setErrorMessage('');
-      router.push('/auth/login'); // Redirect to /auth/login page
+      router.push('/auth/login');
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('Registration failed. Please try again.');
